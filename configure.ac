@@ -275,6 +275,17 @@ else
   features="$features\n  TDA995x support :\t\t\tno"
 fi
 
+## mark duckbox support as available if the required headers and libs were found
+if test "x$use_duck" != "xno"; then
+  AC_DEFINE([HAVE_DUCK_API],[1],[Define to 1 to include duckbox support])
+  AM_CONDITIONAL(USE_DUCK_API, true)
+  features="$features\n  sh4 duckbox support :\t\t\tyes"
+  LIB_INFO="$LIB_INFO 'duckbox'"
+else
+  AM_CONDITIONAL(USE_RPI_API, false)
+  features="$features\n sh4 duckbox support :\t\t\tno"
+fi
+
 ## check if our build system is complete
 AC_CHECK_HEADER(algorithm,,AC_MSG_ERROR($msg_required_header_missing))
 AC_CHECK_HEADER(ctype.h,,AC_MSG_ERROR($msg_required_header_missing))
