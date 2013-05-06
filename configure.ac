@@ -43,6 +43,13 @@ AC_ARG_ENABLE([optimisation],
   [use_optimisation=$enableval],
   [use_optimisation=yes])
 
+## sh4 duckbox project  
+AC_ARG_ENABLE([duckbox],
+  [AS_HELP_STRING([--enable-duckbox],
+  [enable support for the sh4 duckbox (default is auto)])],
+  [use_duck=$enableval],
+  [use_duck=auto])
+
 ## TDA995x support
 AC_ARG_ENABLE([cubox],
   [AS_HELP_STRING([--enable-tda995x],
