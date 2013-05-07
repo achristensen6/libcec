@@ -52,6 +52,11 @@
 #include "TDA995x/TDA995xCECAdapterCommunication.h"
 #endif
 
+#if defined(HAVE_DUCK_API)
+#include "duckbox/DuckboxCECAdapterDetection.h"
+#include "duckbox/DuckboxCECAdapterCommunication.h"
+#endif
+
 using namespace std;
 using namespace CEC;
 
